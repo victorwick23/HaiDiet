@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:haidiet/blood_type.dart';
 
 class GenderPage extends StatelessWidget {
   const GenderPage({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class GenderPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SvgPicture.asset('asset/asset.svg'),
             Text(
               "Welcome to HaiDiet",
               style: TextStyle(
@@ -41,8 +44,16 @@ class GenderPage extends StatelessWidget {
                     height: 40,
                     width: 150,
                     child: TextButton(
-                      onPressed: () {},
-                      child: Text("Saya Laki-Laki"),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => BloodType()));
+                      },
+                      child: Text(
+                        "Saya Laki-Laki",
+                        style: TextStyle(color: Color(0xff6F68F1)),
+                      ),
                       style: ButtonStyle(
                           shape:
                               MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -58,8 +69,16 @@ class GenderPage extends StatelessWidget {
                     height: 40,
                     width: 150,
                     child: TextButton(
-                        onPressed: () {},
-                        child: Text("Saya Perempuan"),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => BloodType()));
+                        },
+                        child: Text(
+                          "Saya Perempuan",
+                          style: TextStyle(color: Color(0xff6F68F1)),
+                        ),
                         style: ButtonStyle(
                             shape: MaterialStateProperty
                                 .all<RoundedRectangleBorder>(
